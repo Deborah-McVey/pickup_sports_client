@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post } from '../../shared/models/post';
 import { PostComponent } from '../../shared/components/posts/post/post.component';
+import { PostService } from '../../core/services/post.service';
+import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
 
 @Component({
   selector: 'app-timeline',
@@ -9,45 +11,19 @@ import { PostComponent } from '../../shared/components/posts/post/post.component
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss'
 })
-export class TimelineComponent {
-  posts: Post[] = [
-    new Post({
-    id: 1,
-    title: "Post 1",
-    content: "Content 1",
-    created_at: "2021-01-01",
-    user: {
-      first_name: "John",
-      last_name: "Doe",
-      email: "email@email.com",
-      user_name: "johndoe123"
-    }
-    }),
-    new Post({
-      id: 2,
-      title: "Post 2",
-      content: "Content 2",
-      created_at: "2021-01-02",
-      user: {
-        first_name: "John",
-        last_name: "Doe",
-        email: "email@email.com",
-        user_name: "johndoe123"
-      }
-      }),
-      new Post({
-        id: 3,
-        title: "Post 3",
-        content: "Content 3",
-        created_at: "2021-01-03",
-        user: {
-          first_name: "John",
-          last_name: "Doe",
-          email: "email@email.com",
-          user_name: "johndoe123"
-        }
-        })
-  ];
+export class TimelineComponent implements OnInit {
+  posts: Post[] = [];
 
-  constructor(){}
+  constructor(private postService: PostService) {}
+
+  ngOnInit(): void {
+    this.postService.getTimelinePosts().subscribe({
+      next: (posts: Post[]) => {
+        this.posts = posts;
+      },
+    error: (error:any) => {
+      console.error('Error fetching timeline posts', error);
+    },
+    });
+  }
 }
