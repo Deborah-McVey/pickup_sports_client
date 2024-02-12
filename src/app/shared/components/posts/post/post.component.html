@@ -1,0 +1,11 @@
+<div class="post-header">
+  <div class="post-header-left">
+    <img src="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png" alt="Profile Image">
+    <div class="post-header-info">
+      <div class="post-header-info-name">{{post.user?.user_name}}</div>
+      <div class="post-header-info-date">{{post.created_at | date}}</div>
+    </div>
+  </div>
+</div>
+
+<div class="post-content">{{post.content}}</div>
