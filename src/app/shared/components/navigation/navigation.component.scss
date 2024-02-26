@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d6cbda;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.navbar .brand-name a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  padding-left: 0.5rem;
+}
+
+.navbar .nav-links a {
+  color: rgb(87, 76, 76);
+  text-decoration: none;
+  padding: 0.5 1 rem;
+  transition: background-color 0.3 ease-in-out;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a:active {
+  color: white;
+  background-color: orange;
+  border-radius: 4px;
+}
