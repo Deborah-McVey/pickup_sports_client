@@ -16,6 +16,8 @@ export class LoginComponent {
     password: new FormControl('', Validators.required)
   })
 
+  isError:boolean = false;
+
   constructor(private authService:AuthenticationService, private router:Router) {}
 
   login() {
@@ -26,10 +28,12 @@ export class LoginComponent {
       this.authService.login(user_name, password).subscribe({
         next: (res:any) => {
           console.log(res);
+          this.authService.setToken(res.token)
           this.router.navigate(['/'])
         },
         error: (error:any) => {
           console.log("Error when logging", error)
+          this.isError = true;
         }
       })
     }
