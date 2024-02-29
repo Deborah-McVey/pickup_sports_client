@@ -22,6 +22,7 @@ export class AuthenticationService {
     localStorage.setItem('token', token)
   }
 
+  // always want to make sure token is valid
   getToken() {
     return localStorage.getItem('token')
   }
