@@ -4,6 +4,7 @@ export class User {
     last_name: string;
     email: string;
     user_name: string;
+  currentUserBehaviorSubject: any;
 
     constructor(user:any){
       this.id = user.id || 0

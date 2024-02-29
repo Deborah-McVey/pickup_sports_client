@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   setCurrentUser(user: User | null) {
-    this.currentUserSubject.next(user);
+    this.currentUserBehaviorSubject.next(user);
   }
 
   getBootstrapData() {
