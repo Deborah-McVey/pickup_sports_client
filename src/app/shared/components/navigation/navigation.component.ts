@@ -9,5 +9,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navigation.component.scss'
 })
 export class NavigationComponent {
+  isSidebarVisible:boolean = false;
 
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible
+  }
 }

@@ -29,3 +29,53 @@
   background-color: orange;
   border-radius: 4px;
 }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-container {
+  transition: width 0.3s ease;
+  width: 2rem;
+}
+
+.menu-container.active {
+  width: 250px;
+}
+
+.menu {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100px;
+  background: #fff;
+  border-left: 2px solid lightblue;
+  transition: right 0.3s ease;
+}
+
+.sidebar.active {
+  right: 0px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #fff;
+}
