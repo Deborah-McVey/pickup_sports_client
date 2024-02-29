@@ -16,7 +16,7 @@ export class NavigationComponent {
 
   // not optimal, should use behavior subject
   isLoggedIn() {
-    console.log("Change Detected")
+    //console.log("Change Detected")
     return this.authService.isLoggedIn();
   }
 
