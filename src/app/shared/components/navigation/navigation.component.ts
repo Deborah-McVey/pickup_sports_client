@@ -28,8 +28,11 @@ export class NavigationComponent implements OnInit {
   }
 
   logout() {
-    this.toggleSidebar();
-    this.authService.logout();
+    if(this.isSidebarVisible) {
+      this.toggleSidebar();
+    }
+      this.authService.logout();
+      this.userService.setCurrentUser(null);
   }
 
   toggleSidebar() {
