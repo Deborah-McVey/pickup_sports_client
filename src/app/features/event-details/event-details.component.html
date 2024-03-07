@@ -11,7 +11,7 @@
     <div class="sports-container">
       <h3>Sports</h3>
       <ul>
-        @for(sport of event.sports: track sport.id) {
+        @for(sport of event.sports; track sport.id) {
           <li>{{ sport.name }}</li>
         }
       </ul>
