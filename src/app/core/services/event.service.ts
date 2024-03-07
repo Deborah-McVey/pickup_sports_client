@@ -12,4 +12,9 @@ export class EventService {
   getEvents(page:number){
     return this.http.get<Event[]>(`${environment.apiUrl}/events?page=${page}`)
   }
+
+  getEvent(id:string | number){
+    return this.http.get<Event[]>(`${environment.apiUrl}/events/${id}`)
+  }
+  
 }

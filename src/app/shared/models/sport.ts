@@ -2,13 +2,7 @@ import { User } from "./user";
 
 export class Event {
   id: number;
-  title: string;
-  content: string;
-  start_date_time: string;
-  end_date_time: string;
-  created_at: string;
-  sports: Sport[];
-  user: User;
+  name: string;
 
   constructor(event:any) {
     this.id = event.id || 0;
