@@ -1,16 +1,11 @@
 import { User } from "./user";
 
-export class Event {
+export class Sport {
   id: number;
   name: string;
 
   constructor(event:any) {
     this.id = event.id || 0;
-    this.title = event.title || "";
-    this.content = event.content || "";
-    this.start_date_time = event.start_date_time;
-    this.end_date_time = event.end_date_time;
-    this.created_at = event.created_at;
-    this.user = event.user || new User({})
-  }
+    this.name = event.name || "";
+    }
 }

@@ -1,3 +1,4 @@
+import { Sport } from "./sport";
 import { User } from "./user";
 
 export class Event {
@@ -17,6 +18,7 @@ export class Event {
     this.start_date_time = event.start_date_time;
     this.end_date_time = event.end_date_time;
     this.created_at = event.created_at;
+    this.sports = event.sports;
     this.user = event.user || new User({})
   }
 }
